@@ -19,7 +19,7 @@ pipeline {
                 sh("git add .")
                 sh("git commit -m 'cicd: update manifest to point to shuttleday/api:${params.DOCKERTAG}'")
                 sh("git push https://${ACCESS_TOKEN}@github.com/shuttleday/shuttleday.git")
-        }
+            }
         }
     }
 }

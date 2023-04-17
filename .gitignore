@@ -1,0 +1,3 @@
+# k8s secrets
+shuttleday-api-secret.yaml
+mongo-secret.yaml

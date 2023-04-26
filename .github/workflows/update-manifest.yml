@@ -1,0 +1,30 @@
+name: Update Manifest
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Tag for the manifest to point to
+        required: true
+        default: latest
+
+jobs:
+  update-manifest:
+    if: reg
+    name: Update Manifest
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Modify manifest
+        run: sed -i "s+ghcr.io/shuttleday/api.*+ghcr.io/shuttleday/api:${{ inputs.tag }}+g" manifests/shuttleday-api.yaml
+
+      - name: Commit Changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: manifests/shuttleday-api.yaml
+          author: github_actions
+          message: "chore(release): update API image version to ${{ inputs.tag }} [skip ci]"
+          push: true
+

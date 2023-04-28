@@ -20,11 +20,16 @@ jobs:
       - name: Modify manifest
         run: sed -i "s+ghcr.io/shuttleday/api.*+ghcr.io/shuttleday/api:${{ inputs.tag }}+g" manifests/shuttleday-api.yaml
 
-      - name: Commit Changes
-        uses: EndBug/add-and-commit@v9
-        with:
-          add: manifests/shuttleday-api.yaml
-          author: github_actions
-          message: "chore(release): update API image version to ${{ inputs.tag }} [skip ci]"
-          push: true
+      - name: Setup git config
+        run: |
+          # Setup the workflow to commit as the bot even though it was triggered via a PAT dispatch
+          # https://github.com/actions/checkout/pull/1184
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+      - name: Commit changes
+        run: |
+          # Stage Changes
+          git add manifests/shuttleday-api.yaml
+          git commit -m "chore(release): update API image version to ${{ inputs.tag }} [skip ci]"
+          git push origin main

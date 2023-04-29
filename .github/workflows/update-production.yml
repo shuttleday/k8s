@@ -1,0 +1,35 @@
+name: Bump Production Manifest Image Version
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Tag for the manifest to point to
+        required: true
+        default: latest
+        type: string
+
+jobs:
+  update-manifest:
+    name: Update Manifest
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Modify manifest
+        run: sed -i "s+ghcr.io/shuttleday/api.*+ghcr.io/shuttleday/api:${{ inputs.tag }}+g" manifests/shuttleday-api.yaml
+
+      - name: Setup git config
+        run: |
+          # Setup the workflow to commit as the bot even though it was triggered via a PAT dispatch
+          # https://github.com/actions/checkout/pull/1184
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit changes
+        run: |
+          # Stage Changes
+          git add manifests/shuttleday-api.yaml
+          git commit -m "chore(release): bump production API image version to ${{ inputs.tag }} [skip ci]"
+          git push origin main

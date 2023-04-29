@@ -30,6 +30,6 @@ jobs:
       - name: Commit changes
         run: |
           # Stage Changes
-          git add manifests/shuttleday-api.yaml
+          git add .
           git commit -m "chore(release): bump staging API image version to ${{ inputs.tag }} [skip ci]"
           git push origin main

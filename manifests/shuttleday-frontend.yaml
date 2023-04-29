@@ -32,8 +32,5 @@ spec:
         # imagePullSecret not required because it's a public image
         image: ghcr.io/shuttleday/frontend:1.4.2
         imagePullPolicy: Always 
-        envFrom:
-        - secretRef:
-            name: shuttleday-frontend-secret
         ports:
         - containerPort: 80

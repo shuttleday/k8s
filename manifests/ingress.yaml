@@ -10,7 +10,7 @@ spec:
   tls:
   - hosts:
     - "api.shuttleday.info"
-    - "shuttleday.info"
+    - "test.shuttleday.info"
     secretName: shuttleday-api-tls
   rules:
   - host: "api.shuttleday.info"

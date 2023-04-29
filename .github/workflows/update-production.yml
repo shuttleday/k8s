@@ -20,7 +20,7 @@ jobs:
       - name: Modify manifest
         run: |
           sed -i "s+ghcr.io/shuttleday/api.*+ghcr.io/shuttleday/api:${{ inputs.tag }}+g" manifests/shuttleday-api.yaml
-          sed -i "s+ghcr.io/shuttleday/api.*+ghcr.io/shuttleday/frontend:${{ inputs.tag }}+g" manifests/shuttleday-frontend.yaml
+          sed -i "s+ghcr.io/shuttleday/frontend.*+ghcr.io/shuttleday/frontend:${{ inputs.tag }}+g" manifests/shuttleday-frontend.yaml
 
       - name: Setup git config
         run: |

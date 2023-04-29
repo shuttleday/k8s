@@ -23,7 +23,7 @@ spec:
             name: shuttleday-api
             port:
               number: 80
-  - host: "shuttleday.info"
+  - host: "test.shuttleday.info"
     http:
       paths:
       - pathType: Prefix

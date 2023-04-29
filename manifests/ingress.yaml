@@ -12,7 +12,7 @@ spec:
   tls:
   - hosts:
     - "api.shuttleday.info"
-    - "test.shuttleday.info"
+    - "shuttleday.info"
     secretName: shuttleday-api-tls
   rules:
   - host: "api.shuttleday.info"
@@ -25,7 +25,7 @@ spec:
             name: shuttleday-api
             port:
               number: 80
-  - host: "test.shuttleday.info"
+  - host: "shuttleday.info"
     http:
       paths:
       - pathType: Prefix

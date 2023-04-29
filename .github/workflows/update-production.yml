@@ -18,7 +18,9 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Modify manifest
-        run: sed -i "s+ghcr.io/shuttleday/api.*+ghcr.io/shuttleday/api:${{ inputs.tag }}+g" manifests/shuttleday-api.yaml
+        run: |
+          sed -i "s+ghcr.io/shuttleday/api.*+ghcr.io/shuttleday/api:${{ inputs.tag }}+g" manifests/shuttleday-api.yaml
+          sed -i "s+ghcr.io/shuttleday/api.*+ghcr.io/shuttleday/frontend:${{ inputs.tag }}+g" manifests/shuttleday-frontend.yaml
 
       - name: Setup git config
         run: |

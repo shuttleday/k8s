@@ -2,4 +2,4 @@
 shuttleday-api-secret.yaml
 mongo-secret.yaml
 shuttleday-frontend-secret.yaml
-
+base/secret.yaml

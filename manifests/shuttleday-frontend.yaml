@@ -30,7 +30,7 @@ spec:
       containers:
       - name: api
         # imagePullSecret not required because it's a public image
-        image: ghcr.io/shuttleday/frontend:1.5.2
+        image: ghcr.io/shuttleday/frontend:1.5.3
         imagePullPolicy: Always 
         ports:
         - containerPort: 80

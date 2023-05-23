@@ -8,3 +8,5 @@ patches:
 resources:
 - ../../base
 - cluster-issuer.yaml
+- cluster-role-binding.yaml
+- cluster-role.yaml

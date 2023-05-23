@@ -1,11 +1,10 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: mongo_role_binding
+  name: mongo-role-binding-staging
 subjects:
 - kind: ServiceAccount
   name: mongo-account
-  namespace: default
 roleRef:
   kind: ClusterRole
   name: mongo-role

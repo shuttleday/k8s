@@ -20,7 +20,7 @@ spec:
         path: "/"
         backend:
           service:
-            name: staging-shuttleday-api
+            name: shuttleday-api
             port:
               number: 80
   - host: "staging.shuttleday.info"
@@ -30,6 +30,6 @@ spec:
         path: "/"
         backend:
           service:
-            name: staging-shuttleday-frontend
+            name: shuttleday-frontend
             port:
               number: 80

@@ -6,6 +6,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-staging
     nginx.ingress.kubernetes.io/whitelist-source-range: "34.87.183.214" # IP address of GCP bastion host
+    nginx.ingress.kubernetes.io/real-ip-header: "X-Real-IP"
 spec:
   tls:
   - hosts:

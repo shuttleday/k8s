@@ -6,6 +6,8 @@ patches:
   - path: frontend-deployment.patch.yaml
   - path: api-deployment.patch.yaml
   - path: ingress.patch.yaml
+  - path: cluster-role-binding.patch.yaml
+  - path: cluster-role.patch.yaml
 resources:
 - ../../base
 - cluster-issuer.yaml

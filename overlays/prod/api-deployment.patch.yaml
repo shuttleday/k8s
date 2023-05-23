@@ -19,6 +19,6 @@ spec:
         imagePullPolicy: Always 
         envFrom:
         - secretRef:
-            name: shuttleday-staging-api-secret
+            name: shuttleday-api-secret
         ports:
         - containerPort: 2600

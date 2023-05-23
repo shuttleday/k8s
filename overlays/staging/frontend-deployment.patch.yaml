@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shuttleday-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: shuttleday-frontend
+  template:
+    metadata:
+      labels:
+        app: shuttleday-frontend
+    spec:
+      containers:
+      - name: api
+        # imagePullSecret not required because it's a public image
+        image: ghcr.io/shuttleday/frontend:1.5.3
+        imagePullPolicy: Always 
+        ports:
+        - containerPort: 80

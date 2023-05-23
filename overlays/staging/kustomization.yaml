@@ -11,3 +11,4 @@ resources:
 - cluster-issuer.yaml
 - cluster-role-binding.yaml
 - cluster-role.yaml
+- ingress-config.yaml

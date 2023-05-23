@@ -6,8 +6,6 @@ metadata:
     kubernetes.io/ingress.class: nginx
     cert-manager.io/cluster-issuer: letsencrypt-staging
     nginx.ingress.kubernetes.io/whitelist-source-range: "34.87.183.214" # IP address of GCP bastion host
-data:
-  use-forwarded-headers: "true" # incoming IP is of the load balancer's if this isn't enabled
 spec:
   tls:
   - hosts:

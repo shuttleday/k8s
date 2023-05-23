@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-configuration
+  labels:
+    app.kubernetes.io/name: shuttleday-ingress
+    app.kubernetes.io/part-of: shuttleday-ingress
+data:
+  use-forwarded-headers: "true" # incoming IP is of the load balancer's if this isn't enabled

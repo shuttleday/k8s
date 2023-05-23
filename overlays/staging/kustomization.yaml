@@ -6,6 +6,5 @@ patches:
   - path: frontend-deployment.patch.yaml
   - path: api-deployment.patch.yaml
   - path: ingress.patch.yaml
-  - path: namespace.yaml
 resources:
 - ../../base

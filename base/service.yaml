@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: shuttleday
+  name: shuttleday-frontend
+spec:
+  type: ClusterIP
+  selector:
+    app: shuttleday-frontend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: shuttleday
+  name: shuttleday-api
+spec:
+  type: ClusterIP
+  selector:
+    app: shuttleday-api
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 2600
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo
+  namespace: shuttleday
+  labels:
+    name: mongo
+spec:
+  ports:
+    - port: 27017
+      targetPort: 27017
+  clusterIP: None
+  selector:
+    app: mongo

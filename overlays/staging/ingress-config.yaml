@@ -7,3 +7,4 @@ metadata:
     app.kubernetes.io/part-of: shuttleday-ingress
 data:
   use-forwarded-headers: "true" # incoming IP is of the load balancer's if this isn't enabled
+  use-proxy-protocol: "true"

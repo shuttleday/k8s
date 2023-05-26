@@ -19,8 +19,8 @@ jobs:
 
       - name: Modify manifest
         run: |
-          sed -i "s+ghcr.io/shuttleday/api.*+ghcr.io/shuttleday/api:${{ inputs.tag }}+g" overlays/staging/api-deployment.patch.yaml
-          sed -i "s+ghcr.io/shuttleday/frontend.*+ghcr.io/shuttleday/frontend:${{ inputs.tag }}+g" overlays/staging/frontend-deployment.patch.yaml
+          sed -i "s+ghcr.io/shuttleday/api.*+ghcr.io/shuttleday/api:${{ inputs.tag }}-rc+g" overlays/staging/api-deployment.patch.yaml
+          sed -i "s+ghcr.io/shuttleday/frontend.*+ghcr.io/shuttleday/frontend:${{ inputs.tag }}-rc+g" overlays/staging/frontend-deployment.patch.yaml
 
       - name: Setup git config
         run: |

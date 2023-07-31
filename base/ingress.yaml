@@ -13,7 +13,7 @@ spec:
   - hosts:
     - "api.shuttleday.info"
     - "shuttleday.info"
-    secretName: shuttleday-api-tls
+    secretName: shuttleday-tls
   rules:
   - host: "api.shuttleday.info"
     http:
